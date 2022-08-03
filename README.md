@@ -33,4 +33,7 @@ dotnet tool install --global dotnet-ef
 dotnet ef
 
 dotnet ef migrations add CreateInitial
+dotnet ef migrations remove
+[Column(TypeName = "decimal(18,2)")]
 
+dotnet ef database update

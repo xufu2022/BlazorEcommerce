@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 
 namespace BlazorEcommerce.Server.Controllers
 {
@@ -16,10 +17,11 @@ namespace BlazorEcommerce.Server.Controllers
         }
 
         [HttpGet]
-        public async Task<ActionResult<List<Product>>> GetProducts()
+        public async Task<ActionResult<ServiceResponse<List<Product>>>> GetProducts()
         {
             //var result = await _productService.GetProductsAsync();
-            return Ok(_context.Products);
+            var result = new ServiceResponse<List<Product>> { Data = await _context.Products.ToListAsync() };
+            return Ok(result);
         }
 
         //private readonly IProductService _productService;
