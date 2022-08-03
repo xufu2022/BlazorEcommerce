@@ -1,0 +1,45 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30114.105
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Server", "Server", "{5F5D84C1-0025-46C2-834F-F3833CF774CD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlazorEcommerce.Server", "Server\BlazorEcommerce.Server\BlazorEcommerce.Server.csproj", "{F0AEED52-8DF7-414A-9C80-08049D78D307}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Shared", "Shared", "{D8A65F9C-CB66-4CC6-952E-C504464D4BFF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlazorEcommerce.Shared", "Shared\BlazorEcommerce.Shared\BlazorEcommerce.Shared.csproj", "{EBC1DC03-6591-4CE2-8ED6-BFABE7EE83EE}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Client", "Client", "{36AD344E-330E-4D7E-9EE9-F1DAB2C30E5D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlazorEcommerce.Client", "Client\BlazorEcommerce.Client\BlazorEcommerce.Client.csproj", "{C044072C-8F68-40CC-A135-8EC12D391A23}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F0AEED52-8DF7-414A-9C80-08049D78D307}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F0AEED52-8DF7-414A-9C80-08049D78D307}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F0AEED52-8DF7-414A-9C80-08049D78D307}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F0AEED52-8DF7-414A-9C80-08049D78D307}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EBC1DC03-6591-4CE2-8ED6-BFABE7EE83EE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EBC1DC03-6591-4CE2-8ED6-BFABE7EE83EE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EBC1DC03-6591-4CE2-8ED6-BFABE7EE83EE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EBC1DC03-6591-4CE2-8ED6-BFABE7EE83EE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C044072C-8F68-40CC-A135-8EC12D391A23}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C044072C-8F68-40CC-A135-8EC12D391A23}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C044072C-8F68-40CC-A135-8EC12D391A23}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C044072C-8F68-40CC-A135-8EC12D391A23}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{F0AEED52-8DF7-414A-9C80-08049D78D307} = {5F5D84C1-0025-46C2-834F-F3833CF774CD}
+		{EBC1DC03-6591-4CE2-8ED6-BFABE7EE83EE} = {D8A65F9C-CB66-4CC6-952E-C504464D4BFF}
+		{C044072C-8F68-40CC-A135-8EC12D391A23} = {36AD344E-330E-4D7E-9EE9-F1DAB2C30E5D}
+	EndGlobalSection
+EndGlobal
