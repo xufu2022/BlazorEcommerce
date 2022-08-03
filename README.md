@@ -37,3 +37,5 @@ dotnet ef migrations remove
 [Column(TypeName = "decimal(18,2)")]
 
 dotnet ef database update
+
+--continue on 22
