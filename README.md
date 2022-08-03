@@ -27,3 +27,8 @@ dotnet add 'Server\BlazorEcommerce.Server\BlazorEcommerce.Server.csproj' package
 dotnet add 'Server\BlazorEcommerce.Server\BlazorEcommerce.Server.csproj' package Stripe.net
 dotnet add 'Server\BlazorEcommerce.Server\BlazorEcommerce.Server.csproj' package Swashbuckle.AspNetCore
 
+
+
+dotnet tool install --global dotnet-ef
+dotnet ef
+
