@@ -32,3 +32,5 @@ dotnet add 'Server\BlazorEcommerce.Server\BlazorEcommerce.Server.csproj' package
 dotnet tool install --global dotnet-ef
 dotnet ef
 
+dotnet ef migrations add CreateInitial
+
