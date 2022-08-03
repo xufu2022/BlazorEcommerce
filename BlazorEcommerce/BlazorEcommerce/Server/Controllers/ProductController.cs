@@ -25,12 +25,12 @@ namespace BlazorEcommerce.Server.Controllers
             return Ok(result);
         }
 
-        //private readonly IProductService _productService;
-
-        //public ProductController(IProductService productService)
-        //{
-        //    _productService = productService;
-        //}
+        [HttpGet("{productId}")]
+        public async Task<ActionResult<ServiceResponse<Product>>> GetProduct(int productId)
+        {
+            var result = await _productService.GetProductAsync(productId);
+            return Ok(result);
+        }
 
         //[HttpGet("admin"), Authorize(Roles = "Admin")]
         //public async Task<ActionResult<ServiceResponse<List<Product>>>> GetAdminProducts()
