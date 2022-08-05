@@ -51,30 +51,30 @@ namespace BlazorEcommerce.Server.Services.ProductService
             return response;
         }
 
-        public async Task<ServiceResponse<List<Product>>> SearchProducts(string searchText, int page)
+        public async Task<ServiceResponse<ProductSearchResult>> SearchProducts(string searchText, int page)
         {
-            //var pageResults = 2f;
-            //var pageCount = Math.Ceiling((await FindProductsBySearchText(searchText)).Count / pageResults);
-            //var products = await _context.Products
-            //    .Where(p => p.Title.ToLower().Contains(searchText.ToLower()) ||
-            //                p.Description.ToLower().Contains(searchText.ToLower()) 
-            //                //&& p.Visible && !p.Deleted
-            //                )
-            //    .Include(p => p.Variants)
-            //    //.Include(p => p.Images)
-            //    //.Skip((page - 1) * (int)pageResults)
-            //    //.Take((int)pageResults)
-            //    .ToListAsync();
+            var pageResults = 2f;
+            var pageCount = Math.Ceiling((await FindProductsBySearchText(searchText)).Count / pageResults);
+            var products = await _context.Products
+                .Where(p => p.Title.ToLower().Contains(searchText.ToLower()) ||
+                            p.Description.ToLower().Contains(searchText.ToLower())
+                            //&& p.Visible && !p.Deleted
+                            )
+                .Include(p => p.Variants)
+                //.Include(p => p.Images)
+                .Skip((page - 1) * (int)pageResults)
+                .Take((int)pageResults)
+                .ToListAsync();
 
-            var response = new ServiceResponse<List<Product>>
+            var response = new ServiceResponse<ProductSearchResult>
             {
-                Data=await FindProductsBySearchText(searchText)
-                //Data = new ProductSearchResult
-                //{
-                //    Products = products,
-                //    CurrentPage = page,
-                //    Pages = (int)pageCount
-                //}
+               // Data=await FindProductsBySearchText(searchText)
+                Data = new ProductSearchResult
+                {
+                    Products = products,
+                    CurrentPage = page,
+                    Pages = (int)pageCount
+                }
             };
 
             return response;
@@ -122,5 +122,19 @@ namespace BlazorEcommerce.Server.Services.ProductService
             return new ServiceResponse<List<string>> { Data = result };
         }
 
+        public async Task<ServiceResponse<List<Product>>> GetFeaturedProducts()
+        {
+            var response = new ServiceResponse<List<Product>>
+            {
+                Data = await _context.Products
+                    .Where(p => p.Featured )
+                    .Include(p => p.Variants)
+                        //.Where(v => v.Visible && !v.Deleted))
+                    //.Include(p => p.Images)
+                    .ToListAsync()
+            };
+
+            return response;
+        }
     }
 }
