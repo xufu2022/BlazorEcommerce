@@ -1,5 +1,6 @@
 global using BlazorEcommerce.Shared;
 global using BlazorEcommerce.Server.Data;
+using BlazorEcommerce.Server.Services.CartService;
 using BlazorEcommerce.Server.Services.CategoryService;
 using BlazorEcommerce.Server.Services.ProductService;
 using Microsoft.EntityFrameworkCore;
@@ -13,6 +14,7 @@ builder.Services.AddDbContext<DataContext>(options =>
 });
 builder.Services.AddScoped<IProductService,ProductService>();
 builder.Services.AddScoped<ICategoryService, CategoryService>();
+builder.Services.AddScoped<ICartService, CartService>();
 builder.Services.AddControllersWithViews();
 builder.Services.AddRazorPages();
 
