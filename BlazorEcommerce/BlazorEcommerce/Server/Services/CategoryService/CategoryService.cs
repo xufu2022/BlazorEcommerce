@@ -63,7 +63,6 @@ namespace BlazorEcommerce.Server.Services.CategoryService
                 Data = categories
             };
         }
-
         public async Task<ServiceResponse<List<Category>>> UpdateCategory(Category category)
         {
             var dbCategory = await GetCategoryById(category.Id);
