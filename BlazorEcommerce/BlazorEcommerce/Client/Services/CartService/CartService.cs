@@ -9,13 +9,13 @@ namespace BlazorEcommerce.Client.Services.CartService
 
         private readonly IAuthService _authService;
 
-        public CartService(ILocalStorageService localStorage , HttpClient http,
+        public CartService(ILocalStorageService localStorage, HttpClient http
             , IAuthService authService
-            )
+        )
         {
             _localStorage = localStorage;
             _http = http;
-            
+
             _authService = authService;
         }
 
@@ -54,9 +54,8 @@ namespace BlazorEcommerce.Client.Services.CartService
 
                 await _localStorage.SetItemAsync("cart", cart);
                 //OnChange.Invoke();
+            }
 
-              
-            }  
             await GetCartItemsCount();
         }
 
@@ -96,7 +95,6 @@ namespace BlazorEcommerce.Client.Services.CartService
                     await response.Content.ReadFromJsonAsync<ServiceResponse<List<CartProductResponse>>>();
                 return cartProducts.Data;
             }
-
         }
 
         public async Task RemoveProductFromCart(int productId, int productTypeId)
@@ -114,7 +112,7 @@ namespace BlazorEcommerce.Client.Services.CartService
                 }
 
                 var cartItem = cart.Find(x => x.ProductId == productId
-                    && x.ProductTypeId == productTypeId);
+                                              && x.ProductTypeId == productTypeId);
                 if (cartItem != null)
                 {
                     cart.Remove(cartItem);
@@ -161,7 +159,7 @@ namespace BlazorEcommerce.Client.Services.CartService
                 }
 
                 var cartItem = cart.Find(x => x.ProductId == product.ProductId
-                    && x.ProductTypeId == product.ProductTypeId);
+                                              && x.ProductTypeId == product.ProductTypeId);
                 if (cartItem != null)
                 {
                     cartItem.Quantity = product.Quantity;
